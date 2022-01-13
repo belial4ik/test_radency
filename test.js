@@ -1,4 +1,4 @@
-function chooseBestSum(t, k, ls) {
+function chooseOptimalDistance(t, k, ls) {
   let result =  ls.reduce((acum, value) => acum.concat(acum.filter(num => num.length < k).map(num => num.concat([value]))), [[]])
       .filter(num => num.length === k)
       .map(num => num.reduce((i, y) => i + y))
@@ -7,4 +7,4 @@ function chooseBestSum(t, k, ls) {
   return result ? result : null
 }
 
-console.log(chooseBestSum(174, 3, [51, 56, 58, 59, 61]))
+console.log(chooseOptimalDistance(174, 3, [51, 56, 58, 59, 61]))
